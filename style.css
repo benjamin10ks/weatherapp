@@ -78,10 +78,7 @@
     /*relative will be used for position absolute position*/
   }
 
-  #searchBtn{
-    display: flex;
-    border: red solid 1px;
-  }
+
 
   .header{                                                                                                  
     position: sticky;

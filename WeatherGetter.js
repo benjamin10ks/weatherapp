@@ -1,25 +1,33 @@
-const API_KEY = process.env.OPENWEATHER_API_KEY; 
+const API_KEY = ''; // Replace with API key in .env file
 const cityInput = document.getElementById('city_input');
 const searchBtn = document.getElementById('searchBtn');
 const locationBtn = document.getElementById('loactionBtn');
 const weatherData = document.getElementById('weather-data');
 
-const getWeatherByCity = async (city) => {
+// Get city coordinates to feed to getWeatherByCoords
+const getCityCoordinates = async (city) => {
     try {
-        const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`);
+        const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`);
         if (!response.ok) {
             throw new Error('City not found');
         }
         const data = await response.json();
-        return data;
+        if (!data || data.length === 0) {
+            throw new Error('City not found');
+        }
+        return {
+            lat: data[0].lat,
+            lon: data[0].lon,
+        };
     } catch (error) {
         throw error;
     }
 };
 
+// Get weather data by coordinates to get the weather data
 const getWeatherByCoords = async (lat, lon) => {
     try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`);
         if (!response.ok) {
             throw new Error('Weather data not found');
         }
@@ -30,6 +38,7 @@ const getWeatherByCoords = async (lat, lon) => {
     }
 };
 
+// Update weather display
 const updateWeatherDisplay = (data) => {
     weatherData.textContent = '';
     
@@ -58,6 +67,7 @@ const handleError = (error) => {
     weatherData.textContent = error.message;
 };
 
+// Search button event listener
 searchBtn.addEventListener('click', async () => {
     const city = cityInput.value.trim();
     if (!city) {
@@ -65,13 +75,15 @@ searchBtn.addEventListener('click', async () => {
         return;
     }
     try {
-        const data = await getWeatherByCity(city);
-        updateWeatherDisplay(data);
+        const coords = await getCityCoordinates(city);
+        const weatherData = await getWeatherByCoords(coords.lat, coords.lon);
+        updateWeatherDisplay(weatherData);
     } catch (error) {
         handleError(error);
     }
 });
 
+// Location button event listener
 locationBtn.addEventListener('click', () => {
     if (!navigator.geolocation) {
         handleError(new Error('Geolocation is not supported by your browser'));
@@ -94,10 +106,4 @@ locationBtn.addEventListener('click', () => {
             handleError(new Error('Unable to retrieve your location'));
         }
     );
-});
-
-
-
-
-
-
+}); 

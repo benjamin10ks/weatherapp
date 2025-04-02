@@ -75,9 +75,10 @@
     margin: 0 auto;
 
     position: relative;
+    /*relative will be used for position absolute position*/
   }
 
-  .header{
+  .header{                                                                                                  
     position: sticky;
     top: 0;
     background-color: var(--bg-accent-color);
@@ -100,8 +101,14 @@
   }
 }
 
-/*The & will just select all the nested elements inside the parent ex.  
+/*The & will just select all the nested elements inside the parent element ex. below
 
 h1.class  {            
 }
+
+h1 {
+    &.class {            
+        {
+    }
+
 */

@@ -7,28 +7,54 @@
     <title>Weather App</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=location_searching" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=location_searching" />
 </head>
 
 <body>
 
     <div class="container-weather-app">
         <div class="header">
-        <h1>Weather App</h1>
-        <div class="weather-input">
-            <input type="text" name="city" id="city_input" placeholder="Enter city">
-            <button type="button" id="searchBtn">
-               <img src="/images/search-black.svg">      hi            
-            </button>
-            <button type="button" id="loactionBtn">
-                <img src="/images/location-black.svg">            
-            </button>
+            <h1>Weather App</h1>
+            <div class="weather-input">
+                <input type="text" name="city" id="city_input" placeholder="Enter city">
+                <button type="button" id="searchBtn">
+                    <img src="/images/search-black.svg"> hi
+                </button>
+                <button type="button" id="loactionBtn">
+                    <img src="/images/location-black.svg">
+                </button>
+            </div>
+        </div>
+        <p id="weather-data"> temp
+        </p>
+
+        <!-- will be need for layout of the weather app card will be placed with different info in each, no clue how it will be mobile friendly LOL-->
+
+        <div class="weather-data">
+            <div class="weather-left">
+                <div class="card">
+                    <div class="current-weather">
+                        <div class="details">
+                            <p>Now</p>
+                            <h2> ____&deg C</h2>
+                            <p></p>
+                        </div>
+                        <div class="weather-icon">
+                            <img src="" alt="">
+                        </div>
+                        <div class="card-footer">
+                            <p>Feels like ____&deg C</p>
+                            <p>Humidity: ____%</p>
+                            <p>Wind speed: ____ km/h</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <p id="weather-data">  temp
-    </p>
-</div>
 
 <script src="WeatherGetter.js"></script>
 </body>

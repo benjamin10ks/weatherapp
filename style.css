@@ -4,6 +4,7 @@
     --bg-body-color: #333;
     --main-font-color: white;
     --bg-accent-color: #363b3f;
+    --bg-card-color: rgba(4, 28, 56, 0.445);
 }
 
 
@@ -114,3 +115,15 @@ h1 {
     }
 
 */
+
+.card{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: var(--bg-card-color);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(221, 221, 221, 0.2);
+}

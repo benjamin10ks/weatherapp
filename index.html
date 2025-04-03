@@ -39,16 +39,26 @@
         <!-- will be need for layout of the weather app card will be placed with different info in each, no clue how it will be mobile friendly LOL-->
 
         <div class="weather-data">
-            <div class="weather-left">
+            <div class="weather-left">  
                 <div class="card">
                     <div class="current-weather">
                         <div class="details">
+                            
+                                <box-icon type='solid'
+                                 name='cloud'
+                                 color="white"
+                                >
+                                </box-icon>
+                          
                             <p>Now</p>
                             <h2> ____&deg C</h2>
                             <p></p>
                         </div>
                         <div class="weather-icon">
-                            <img src="" alt="">
+                            <box-icon
+                             name='sun'
+                             color="white"
+                            ></box-icon>
                         </div>
                         <div class="card-footer">
                             <p>Feels like ____&deg C</p>
@@ -58,13 +68,22 @@
                     </div>
                 </div>
             </div>
+
+            <div class="weather-right">
+                <!--This is most of the right data which will house wind speed, wind, humanity, etc.....-->
+                <div class="card">
+
+
+                </div>
+
+            </div>
         </div>
     </div>
 
 <script src="WeatherGetter.js"></script>
 
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-<!--link above is used for icons-->
+<!--link above is used for icons-->                                                                                                                 
 
 </body>
 

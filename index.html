@@ -33,8 +33,6 @@
                 </button>
             </div>
         </div>
-        <p id="weather-data"> temp
-        </p>
 
         <!-- will be need for layout of the weather app card will be placed with different info in each, no clue how it will be mobile friendly LOL-->
 
@@ -45,26 +43,19 @@
                     <div class="current-weather">
                         <div class="details">
                             
-                                <box-icon type='solid'
-                                 name='cloud'
+                                <box-icon type=''
+                                 name='sun'
                                  color="white"
                                 >
                                 </box-icon>
                           
                             <p>Now</p>
-                            <h2> ____&deg C</h2>
-                            <p></p>
+                            <h2 id = "temp"> ____&deg C</h2>
+                            <p id = "description"></p>
                         </div>
-                        <div class="weather-icon">
-                            <box-icon
-                             name='sun'
-                             color="white"
-                            ></box-icon>
-                        </div>
+    
                         <div class="card-footer">
-                            <p>Feels like ____&deg C</p>
-                            <p>Humidity: ____%</p>
-                            <p>Wind speed: ____ km/h</p>
+                            <p id = "feels-like"> feels like ____&deg C</p>
                         </div>
                     </div>
                 </div>

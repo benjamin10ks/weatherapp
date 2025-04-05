@@ -6,6 +6,7 @@ const cityName = document.getElementById('city-name');
 const description = document.getElementById('description');
 const temp = document.getElementById('temp');
 const feelsLike = document.getElementById('feels-like');
+const weatherIcon = document.getElementById('weather-icon')
 
 // Get city coordinates to feed to getWeatherByCoords
 const getCityCoordinates = async (city) => {
@@ -61,6 +62,23 @@ const updateWeatherDisplay = (data) => {
     console.log(feelsLike);
 };
 
+// honstly we can have a huge map of svg/png to simplify this
+// it wont be too big imo, and it will improve performance
+// for example:
+// const icons = new Map();
+// icons.set(sunIcon, 'images/sunIcon.png')
+// weatherIcon.setAttribute('name', icons.get(desc));
+const updateIcon = (data) => {
+    const desc = data.weather[0].description
+    switch (desc){
+        case 'clear sky':
+        weatherIcon.setAttribute('name', 'sun');
+        break;
+        default:
+            weatherIcon.setAttribute('name', 'cloud')
+    }
+}
+//this can be sent anywhere to the user just change the elem its targeting
 const handleError = (error) => {
     cityName.textContent = error.message;
 };
@@ -77,6 +95,7 @@ searchBtn.addEventListener('click', async () => {
         const weatherData = await getWeatherByCoords(coords.lat, coords.lon);
         console.log(weatherData);
         updateWeatherDisplay(weatherData);
+        updateIcon(weatherData);
     } catch (error) {
         handleError(error);
     }

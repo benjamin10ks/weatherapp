@@ -1,4 +1,7 @@
-const API_KEY = 'ed1f93bc05b1f1f3bfaa19950d3ff8a6'; // Replace with API key in .env file
+
+import { weatherIconsMap } from '/scripts/WeatherIcons.js';
+
+const API_KEY = ''; // Replace with API key in .env file
 const cityInput = document.getElementById('city_input');
 const searchBtn = document.getElementById('searchBtn');
 const locationBtn = document.getElementById('loactionBtn');
@@ -62,23 +65,9 @@ const updateWeatherDisplay = (data) => {
     console.log(feelsLike);
 };
 
-// honstly we can have a huge map of svg/png to simplify this
-// it wont be too big imo, and it will improve performance
-// for example:
-// const icons = new Map();
-// icons.set(sunIcon, 'images/sunIcon.png')
-// weatherIcon.setAttribute('name', icons.get(desc));
-
-
 const updateIcon = (data) => {
     const desc = data.weather[0].description
-    switch (desc){
-        case 'clear sky':
-        weatherIcon.setAttribute('name', 'sun');
-        break;
-        default:
-            weatherIcon.setAttribute('name', 'cloud')
-    }
+    weatherIcon.setAttribute('name', weatherIconsMap.get(desc));
 }
 //this can be sent anywhere to the user just change the elem its targeting
 const handleError = (error) => {

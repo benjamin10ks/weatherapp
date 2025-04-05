@@ -68,6 +68,8 @@ const updateWeatherDisplay = (data) => {
 // const icons = new Map();
 // icons.set(sunIcon, 'images/sunIcon.png')
 // weatherIcon.setAttribute('name', icons.get(desc));
+
+
 const updateIcon = (data) => {
     const desc = data.weather[0].description
     switch (desc){

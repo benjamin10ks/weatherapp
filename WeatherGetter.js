@@ -1,8 +1,9 @@
-const API_KEY = ''; // Replace with API key in .env file
+const API_KEY = '855f97158ee8a00a2c68758e8822a7bf'; // Replace with API key in .env file
 const cityInput = document.getElementById('city_input');
 const searchBtn = document.getElementById('searchBtn');
 const locationBtn = document.getElementById('loactionBtn');
-const weatherData = document.getElementById('weather-data');
+const cityName = document.getElementById('city-name');
+const description = document.getElementById('description');
 const temp = document.getElementById('temp');
 const feelsLike = document.getElementById('feels-like');
 
@@ -42,47 +43,26 @@ const getWeatherByCoords = async (lat, lon) => {
 
 // Update weather display
 const updateWeatherDisplay = (data) => {
-    weatherData.textContent = '';
+    cityName.textContent = '';
+    description.textContent = '';
     temp.textContent = '';
     feelsLike.textContent = '';
     
-
-    const cityName = document.createElement('h2');
     cityName.textContent = data.name;
-    weatherData.appendChild(cityName);
     console.log(cityName);
 
-    const description = document.createElement('p');
     description.textContent = data.weather[0].description;
-    weatherData.appendChild(description);
     console.log(description);
 
-    const temperature = document.createElement('p');
-    temperature.textContent = `${Math.round(data.main.temp)}°C`;
-    temp.textContent = temperature.textContent;
-    weatherData.appendChild(temperature);
-    console.log(temperature);
+    temp.textContent = `${Math.round(data.main.temp)}°C`;
+    console.log(temp);
 
-    const feelsLike = document.createElement('p');
     feelsLike.textContent = `${Math.round(data.main.feels_like)}°C`;
-    feelsLike.textContent = feelsLike.textContent;
-    weatherData.appendChild(feelsLike);
     console.log(feelsLike);
-
-    const humidity = document.createElement('p');
-    humidity.textContent = `Humidity: ${data.main.humidity}%`;
-    weatherData.appendChild(humidity);
-    console.log(humidity);
-
-
-    const windSpeed = document.createElement('p');
-    windSpeed.textContent = `Wind Speed: ${data.wind.speed} m/s`;
-    weatherData.appendChild(windSpeed);
-    console.log(windSpeed);
 };
 
 const handleError = (error) => {
-    weatherData.textContent = error.message;
+    cityName.textContent = error.message;
 };
 
 // Search button event listener
@@ -95,6 +75,7 @@ searchBtn.addEventListener('click', async () => {
     try {
         const coords = await getCityCoordinates(city);
         const weatherData = await getWeatherByCoords(coords.lat, coords.lon);
+        console.log(weatherData);
         updateWeatherDisplay(weatherData);
     } catch (error) {
         handleError(error);

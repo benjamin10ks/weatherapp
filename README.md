@@ -7,3 +7,4 @@ lowkey weather app
 - time and weather dependant UI
 - Grid dashboard
 - card click, show more- should color dashboard
+- MORE ICONS

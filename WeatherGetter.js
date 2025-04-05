@@ -1,4 +1,4 @@
-const API_KEY = ''; // Replace with API key in .env file
+const API_KEY = 'ed1f93bc05b1f1f3bfaa19950d3ff8a6'; // Replace with API key in .env file
 const cityInput = document.getElementById('city_input');
 const searchBtn = document.getElementById('searchBtn');
 const locationBtn = document.getElementById('loactionBtn');

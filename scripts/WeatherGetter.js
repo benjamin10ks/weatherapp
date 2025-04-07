@@ -50,6 +50,14 @@ const getWeatherByCoords = async (lat, lon) => {
 };
 
 // Update weather display
+//to display data:
+//use the data.parentDir.displaydata
+//for example if you want to show the current coordinates
+//you do data.coord.lat, data.coord.lon
+//for weather since its an array its a little different\
+//first you refernce data.weather
+//then you pass in the index you want to reference
+//so data.weather[1].icon this gives you the openweather icon 
 const updateWeatherDisplay = (data) => {
     cityName.textContent = '';
     description.textContent = '';

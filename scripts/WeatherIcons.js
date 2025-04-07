@@ -3,9 +3,10 @@
 //variations of weather can be lumped together like 
 // for example: snow and light snow
 //placeholder svgs for now
+//sldjkfgjhjskdjfh
 
 export const weatherIconsMap = new Map([
-    // Clear & Clouds
+    // Clear & Clouds 
     ["clear sky", "icons/clear.svg"],
     ["few clouds", "icons/cloudy.svg"],
     ["scattered clouds", "icons/cloudy.svg"],

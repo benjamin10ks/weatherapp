@@ -5,7 +5,7 @@
 //placeholder svgs for now
 
 export const weatherIconsMap = new Map([
-    // Clear & Clouds
+    // Clear & Clouds 
     ["clear sky", "icons/clear.svg"],
     ["few clouds", "icons/cloudy.svg"],
     ["scattered clouds", "icons/cloudy.svg"],

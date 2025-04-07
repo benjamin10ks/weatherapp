@@ -84,6 +84,9 @@ searchBar.addEventListener('keydown', async (event) => {
             handleError(new Error('Please enter a city name'));
             return;
         }
+        if(city === cityName.textContent){
+            return;
+        }
         try {
             const coords = await getCityCoordinates(city);
             const weatherData = await getWeatherByCoords(coords.lat, coords.lon);

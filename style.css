@@ -61,6 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .app-container {
     display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 1200px;
     height: 90vh;
@@ -71,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #2b6cb0;
     border-radius: 25px;
     padding: 30px;
-    width: 35%;
+    width: 100%;
     margin-right: 10px;
     display: flex;
     flex-direction: column;
@@ -82,9 +83,10 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #2b6cb0;
     border-radius: 25px;
     padding: 30px;
-    width: 65%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    margin-top: 3em;
 }
 
 .location {
@@ -95,8 +97,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .weather-icon {
     text-align: center;
-    margin: 20px 0;
-    border: solid red 1px;
+    margin: 20px auto;
+    display: block;
+/*You have to change it to display block since left say for example you put it in a box that was made of 80px by 80px and the logo was 70 pixels if you centered it you'd barely tell,
+with display it turns the element into its own block taking the full space but all increasing the width and better centering it making it a true 50% 50% if that makes sense*/    
 }
 
 .temperature {
@@ -124,6 +128,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     margin-top: auto;
+    margin-bottom: 3em;
 }
 
 .forecast-day {
@@ -175,6 +180,7 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-rows: 1fr 1fr 1fr;
     gap: 20px;
     flex-grow: 1;
+    border: red solid 1px;
 }
 
 .grid-item {
@@ -191,9 +197,28 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Desktop size*/  
 @media (min-width: 680px){
+  
+  .app-container{
+    flex-direction: row
+  }
+
+  .forecast{
+    margin-bottom: 0;
+  }
   .weather-right {
     flex: 2;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
+  }
+
+  .left-panel{
+    width: 35%;
+  }
+  
+  .right-panel{
+    width: 65%;
+    margin-top: 0em;
+  }
+
 }

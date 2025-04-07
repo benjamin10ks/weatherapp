@@ -10,6 +10,7 @@ const cityName = document.getElementById('city-name');
 const description = document.getElementById('description');
 const temp = document.getElementById('temperature');
 const feelsLike = document.getElementById('feels-like');
+const humidity = document.getElementById('humidity');
 
 const weatherIcon = document.getElementById('weather-icon')
 //const locationBtn = document.getElementByClassName('loactionBtn');
@@ -54,16 +55,20 @@ const updateWeatherDisplay = (data) => {
     description.textContent = '';
     temp.textContent = '';
     feelsLike.textContent = '';
+    humidity.textContent = '';
+
     
     cityName.textContent = data.name;
     description.textContent = data.weather[0].description;
     temp.textContent = `${Math.round(data.main.temp)}°F`;
     feelsLike.textContent = `${Math.round(data.main.feels_like)}°F`;
+    humidity.textContent = `${data.main.humidity}%`;
 
     console.log(cityName);
     console.log(description);
     console.log(temp);
     console.log(feelsLike);
+    console.log(humidity);
 };
 
 const updateIcon = (data) => {

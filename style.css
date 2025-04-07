@@ -180,7 +180,6 @@ with display it turns the element into its own block taking the full space but a
     grid-template-rows: 1fr 1fr 1fr;
     gap: 20px;
     flex-grow: 1;
-    border: red solid 1px;
 }
 
 .grid-item {

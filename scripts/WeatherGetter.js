@@ -1,15 +1,18 @@
 
 import { weatherIconsMap } from '/scripts/WeatherIcons.js';
 
-const API_KEY = ''; // Replace with API key in .env file
-const cityInput = document.getElementById('city_input');
-const searchBtn = document.getElementById('searchBtn');
-const locationBtn = document.getElementById('loactionBtn');
+const API_KEY = 'ed1f93bc05b1f1f3bfaa19950d3ff8a6'; // Replace with API key in .env file
+
+const searchBar = document.getElementById('search-bar');
+//const searchBtn = document.getElementById('searchBtn');
+
 const cityName = document.getElementById('city-name');
 const description = document.getElementById('description');
-const temp = document.getElementById('temp');
+const temp = document.getElementById('temperature');
 const feelsLike = document.getElementById('feels-like');
+
 const weatherIcon = document.getElementById('weather-icon')
+//const locationBtn = document.getElementByClassName('loactionBtn');
 
 // Get city coordinates to feed to getWeatherByCoords
 const getCityCoordinates = async (city) => {
@@ -53,15 +56,13 @@ const updateWeatherDisplay = (data) => {
     feelsLike.textContent = '';
     
     cityName.textContent = data.name;
-    console.log(cityName);
-
     description.textContent = data.weather[0].description;
+    temp.textContent = `${Math.round(data.main.temp)}°F`;
+    feelsLike.textContent = `${Math.round(data.main.feels_like)}°F`;
+
+    console.log(cityName);
     console.log(description);
-
-    temp.textContent = `${Math.round(data.main.temp)}°C`;
     console.log(temp);
-
-    feelsLike.textContent = `${Math.round(data.main.feels_like)}°C`;
     console.log(feelsLike);
 };
 
@@ -75,44 +76,22 @@ const handleError = (error) => {
 };
 
 // Search button event listener
-searchBtn.addEventListener('click', async () => {
-    const city = cityInput.value.trim();
-    if (!city) {
-        handleError(new Error('Please enter a city name'));
-        return;
-    }
-    try {
-        const coords = await getCityCoordinates(city);
-        const weatherData = await getWeatherByCoords(coords.lat, coords.lon);
-        console.log(weatherData);
-        updateWeatherDisplay(weatherData);
-        updateIcon(weatherData);
-    } catch (error) {
-        handleError(error);
+searchBar.addEventListener('keydown', async (event) => {
+    if(event.key === 'Enter'){
+        console.log("Enter Pressed");
+        const city = searchBar.value.trim();
+        if (!city) {
+            handleError(new Error('Please enter a city name'));
+            return;
+        }
+        try {
+            const coords = await getCityCoordinates(city);
+            const weatherData = await getWeatherByCoords(coords.lat, coords.lon);
+            console.log(weatherData);
+            updateWeatherDisplay(weatherData);
+            ///updateIcon(weatherData);
+        } catch (error) {
+            handleError(error);
+        }
     }
 });
-
-// Location button event listener
-locationBtn.addEventListener('click', () => {
-    if (!navigator.geolocation) {
-        handleError(new Error('Geolocation is not supported by your browser'));
-        return;
-    }
-
-    navigator.geolocation.getCurrentPosition(
-        async (position) => {
-            try {
-                const data = await getWeatherByCoords(
-                    position.coords.latitude,
-                    position.coords.longitude
-                );
-                updateWeatherDisplay(data);
-            } catch (error) {
-                handleError(error);
-            }
-        },
-        (error) => {
-            handleError(new Error('Unable to retrieve your location'));
-        }
-    );
-}); 

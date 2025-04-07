@@ -1,100 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-
     <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
 </head>
-
 <body>
-
-    <div class="container">
-        <div class="header">
-            <h1>Weather App</h1>
-            <div class="weather-input">
-                <input type="text" name="city" id="city_input" placeholder="Enter city">
-                <button type="button" id="searchBtn">
-        
-                    <box-icon name='search-alt'
-                    size="small"    
-                    >
-                    </box-icon>
-                    <!--How to call onto the icon style-->
-
-                </button>
-                <button type="button" id="loactionBtn">
-                    <box-icon name='location-plus' 
-                    type='solid' >
-                </box-icon>
-                </button>
+    <div class="app-container">
+        <div class="left-panel">
+            <div class="city-name">
+                <h2 id="city-name" ></h2>
             </div>
+            
+            <div class="weather-icon">
+                <img src="/images/icons/clear-sky.svg" alt="weather icon"> 
+            </div>
+            
+            <div id="description" class="description">...</div>
+            <div id="temperature" class="temperature">_°</div>
+            <div id="feels-like" class="feels-like">Feels like _°</div>
+            
+            <div class="forecast">
+                <div class="forecast-day">
+                    <div class="day-name">Today</div>
+                    <div class="day-icon">🌥️</div>
+                    <div class="day-temp">35°</div>
+                </div>
+                <div class="forecast-day">
+                    <div class="day-name">Tmr.</div>
+                    <div class="day-icon">🌥️</div>
+                    <div class="day-temp">35°</div>
+                </div>
+                <div class="forecast-day">
+                    <div class="day-name">Wed.</div>
+                    <div class="day-icon">🌤️</div>
+                    <div class="day-temp">35°</div>
+                </div>
+                <div class="forecast-day">
+                    <div class="day-name">Thur.</div>
+                    <div class="day-icon">🌥️</div>
+                    <div class="day-temp">35°</div>
+                </div>
+            </div>
+            
+            <div class="empty-box"></div>
         </div>
-
-        <!-- will be need for layout of the weather app card will be placed with different info in each, no clue how it will be mobile friendly LOL-->
-
-        <div class="weather-data">
-            <div class="weather-left">  
-                <div class="card">
-                    <!--Reuseable code for each card needed-->
-                    <div class="current-weather">
-                        <div class="details">
-                            
-                                <box-icon type=''
-                                 name='cloud'
-                                 color="white"
-                                 id = 'weather-icon'
-                                >
-                                </box-icon>
-                          
-                            <p>Now</p>
-                            <h2 id = "city-name"></h2>
-                            <h2 id = "temp"> ____&deg C</h2>
-                            <p id = "description"></p>
-                        </div>
-    
-                        <div class="card-footer">
-                            <p id = "feels-like"> feels like ____&deg C</p>
-                        </div>
-                    </div>
-                </div>
+        
+        <div class="right-panel">
+            <div class="search-bar">
+                <input id="search-bar" type="text" name='city' class="search-input" placeholder="Search Location">
             </div>
-
-            <div class="weather-right">
-                <!--This is most of the right data which will house wind speed, wind, humanity, etc.....-->
-                <div class="card">
-                    <div class="details">
-                            
-                        <box-icon type='solid'
-                         name='cloud'
-                         color="white"
-                        >
-                        </box-icon>
-                  
-                    <p>Now</p>
-                    <h2> ____&deg C</h2>
-                    <p></p>
-                </div>
-
-                <div class="card-footer">
-                    <p>Feels like ____&deg C</p>
-                    <p>Humidity: ____%</p>
-                    <p>Wind speed: ____ km/h</p>
-                </div>
-
-                </div>
-
+            
+            <div class="grid-container">
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
             </div>
         </div>
     </div>
-
-<script type= 'module' src="/scripts/WeatherGetter.js"></script>
-
-<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-<!--link above is used for icons-->                                                                                                                 
-
+    <script type= 'module' src="/scripts/WeatherGetter.js"></script>
 </body>
-
 </html>

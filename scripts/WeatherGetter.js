@@ -13,6 +13,10 @@ const feelsLike = document.getElementById('feels-like');
 const humidity = document.getElementById('humidity');
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
@@ -74,7 +78,10 @@ const updateWeatherDisplay = (data) => {
     humidity.textContent = '';
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -94,6 +101,10 @@ const updateWeatherDisplay = (data) => {
     console.log(humidity);
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+    /*just trying to get humidity to show*/
+>>>>>>> Stashed changes
 =======
     /*just trying to get humidity to show*/
 >>>>>>> Stashed changes

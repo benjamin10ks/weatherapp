@@ -8,3 +8,7 @@ lowkey weather app
 - Grid dashboard --diffent sizes
 - card click, show more- should color dashboard
 - MORE ICONS
+
+- finish api inegration with forecast
+
+- refactor api calls 

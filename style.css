@@ -211,7 +211,8 @@ with display it turns the element into its own block taking the full space but a
 .search-input:-webkit-autofill:hover, 
 .search-input:-webkit-autofill:focus, 
 .search-input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-box-shadow: 0 0 0 1000px #1e3a8a inset !important;
+    -webkit-text-fill-color: #fff !important;
 }
 
 .search-input::placeholder {

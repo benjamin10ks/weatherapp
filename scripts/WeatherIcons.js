@@ -72,4 +72,13 @@ export const weatherIconsMap = new Map([
     ["squalls", "icons/fog.svg"],
     ["tornado", "icons/tornado.svg"],
   ]);
+
+  export const weatherEmojiMap = new Map([
+    ["Thunderstorm", "⛈️"],
+    ["Clouds", "🌥️"],
+    ["Rain", "🌧️"],
+    ["Snow", "🌨️"],
+    ["Clear", "☀️"],
+    ["Drizzle", "🌦️"]
+  ]);
   

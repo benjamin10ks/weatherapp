@@ -1,7 +1,7 @@
 # weatherapp TODO
 lowkey weather app
 
-- set up server (at some point)
+- set up server (at some point)--
 - saved locations
 - mobile support
 - time and weather dependant UI
@@ -9,6 +9,4 @@ lowkey weather app
 - card click, show more- should color dashboard
 - MORE ICONS
 
-- finish api inegration with forecast
 
-- refactor api calls 

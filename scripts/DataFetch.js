@@ -36,10 +36,10 @@ export const getWeatherByCoords = async (lat, lon) => {
     }
 };
 
-//temp
+//5 day
 export const getForecast = async (lat, lon) => {
     try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial`);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial`);
         if (!response.ok) {
             throw new Error('Weather data not found');
         }

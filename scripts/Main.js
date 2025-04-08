@@ -1,6 +1,7 @@
 
-import { weatherIconsMap } from '/scripts/WeatherIcons.js';
+import { weatherIconsMap, weatherEmojiMap } from '/scripts/WeatherIcons.js';
 import { getCityCoordinates, getForecast, getWeatherByCoords } from '/scripts/DataFetch.js';
+
 
 const searchBar = document.getElementById('search-bar');
 
@@ -10,10 +11,20 @@ const description = document.getElementById('description');
 const temp = document.getElementById('temperature');
 const feelsLike = document.getElementById('feels-like');
 const humidity = document.getElementById('humidity');
-const weatherIcon = document.getElementById('weather-icon')
+//const weatherIcon = document.getElementById('weather-icon')
 
-//4day forecast
+//5 day forecast
 const forecast = document.getElementById('forecast');
+
+const daysOfTheWeek = [
+    'Sun',
+    'Mon',
+    'Tues',
+    'Wed',
+    'Thur',
+    'Fri',
+    'Sat'
+];
 
 // Update weather display
 //to display data:
@@ -46,17 +57,41 @@ const updateWeatherDisplay = (data) => {
     console.log(humidity);
 };
 
-const updateForecast = () => {
-    forecast.textContent = '';
+const updateForecast = (data) => {
+    const forecastArr = [
+        data.list[0].main.temp, //day 1
+        data.list[8].main.temp, 
+        data.list[16].main.temp, 
+        data.list[24].main.temp, 
+        data.list[32].main.temp,
+    ];
 
-    const forecastArr = {
-        
-    };
+    const today = new Date();
+
+    const forcastDays = document.querySelectorAll('.forecast-day');
+
+    forcastDays.forEach((dayElement, index) => {
+        if(index < forecastArr.length){
+            
+            const day = new Date(today);
+            day.setDate(today.getDate() + index);
+
+            const dayName = index === 0 ? 'Today' : daysOfTheWeek[day.getDay()];
+            dayElement.querySelector('.day-name').textContent = dayName;
+            
+            const temp = `${Math.round(forecastArr[index])}°`
+            dayElement.querySelector('.day-temp').textContent = `${temp}`;
+            
+            //const icon = weatherEmojiMap.get();
+            
+        }
+    })
 }
 
 const updateIcon = (data) => {
-    const desc = data.weather[0].description
-    weatherIcon.setAttribute('name', weatherIconsMap.get(desc));
+    //const desc = data.weather[0].description
+    //box ICON STUFF
+    // weatherIcon.setAttribute('name', weatherIconsMap.get(desc));
 }
 //this can be sent anywhere to the user just change the elem its targeting
 const handleError = (error) => {
@@ -78,8 +113,11 @@ searchBar.addEventListener('keydown', async (event) => {
         try {
             const coords = await getCityCoordinates(city);
             const weatherData = await getWeatherByCoords(coords.lat, coords.lon);
+            const forecast = await getForecast(coords.lat, coords.lon);
             console.log(weatherData);
             updateWeatherDisplay(weatherData);
+            updateForecast(forecast);
+            console.log(forecast);
             ///updateIcon(weatherData);
         } catch (error) {
             handleError(error);

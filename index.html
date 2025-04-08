@@ -1,90 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>Weather App</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="app-container">
-        <div class="left-panel">
-            <div class="city-name">
-                <h2 id="city-name" ></h2>
-            </div>
-            
-            <div class="weather-icon">
-                <img src="/images/icons/clear-sky.svg" alt="weather icon"> 
-            </div>
-            
-            <div id="description" class="description">...</div>
-            <div id="temperature" class="temperature">_°</div>
-            <div id="feels-like" class="feels-like">Feels like _°</div>
+      <div class="left-panel">
+        <div class="city-name">
+          <h2 id="city-name"></h2>
+        </div>
 
-            <div class="forecast-container">
-                <div id="forecast" class="forecast">
-                    <div class="forecast-day">
-                        <div class="day-name">Today</div>
-                        <div class="day-icon">🌥️</div>
-                        <div class="day-temp">35°</div>
-                    </div>
-                    <div class="forecast-day">
-                        <div class="day-name">Tmr.</div>
-                        <div class="day-icon">🌥️</div>
-                        <div class="day-temp">35°</div>
-                    </div>
-                    <div class="forecast-day">
-                        <div id="" class="day-name">Wed.</div>
-                        <div class="day-icon">🌤️</div>
-                        <div class="day-temp">35°</div>
-                    </div>
-                    <div class="forecast-day">
-                        <div class="day-name">Thur.</div>
-                        <div class="day-icon">🌥️</div>
-                        <div class="day-temp">35°</div>
-                    </div>
-                    <div class="forecast-day">
-                        <div class="day-name">Thur.</div>
-                        <div class="day-icon">🌥️</div>
-                        <div class="day-temp">35°</div>
-                    </div>
-                    <div class="forecast-day">
-                        <div class="day-name">Thur.</div>
-                        <div class="day-icon">🌥️</div>
-                        <div class="day-temp">35°</div>
-                    </div>
-                    <div class="forecast-day">
-                        <div class="day-name">Thur.</div>
-                        <div class="day-icon">🌥️</div>
-                        <div class="day-temp">35°</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="empty-box"></div>
+        <div class="weather-icon">
+          <img src="/images/icons/clear-sky.svg" alt="weather icon" />
         </div>
-        
-        <div class="right-panel">
-            <div class="search-bar">
-                <input id="search-bar" type="text" name='city' class="search-input" placeholder="Search Location">
+
+        <div id="description" class="description">...</div>
+        <div id="temperature" class="temperature">_°</div>
+        <div id="feels-like" class="feels-like">Feels like _°</div>
+
+        <div class="forecast-container">
+          <div id="forecast" class="forecast">
+            <div class="forecast-day">
+              <div class="day-name">Today</div>
+              <div class="day-icon">🌥️</div>
+              <div class="day-temp">35°</div>
             </div>
-            
-            <div class="grid-container">
-                <!--These will grow once info is placed in them ! don't forget-->
-                <div id="humidity" class="grid-item"><h6>Todays humidity will be...</h6></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
+            <div class="forecast-day">
+              <div class="day-name">Tmr.</div>
+              <div class="day-icon">🌥️</div>
+              <div class="day-temp">35°</div>
+            </div>
+            <div class="forecast-day">
+              <div id="" class="day-name">Wed.</div>
+              <div class="day-icon">🌤️</div>
+              <div class="day-temp">35°</div>
+            </div>
+            <div class="forecast-day">
+              <div class="day-name">Thur.</div>
+              <div class="day-icon">🌥️</div>
+              <div class="day-temp">35°</div>
+            </div>
+            <div class="forecast-day">
+              <div class="day-name">Thur.</div>
+              <div class="day-icon">🌥️</div>
+              <div class="day-temp">35°</div>
+            </div>
+            <div class="forecast-day">
+              <div class="day-name">Thur.</div>
+              <div class="day-icon">🌥️</div>
+              <div class="day-temp">35°</div>
+            </div>
+            <div class="forecast-day">
+              <div class="day-name">Thur.</div>
+              <div class="day-icon">🌥️</div>
+              <div class="day-temp">35°</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="empty-box"></div>
+      </div>
+
+      <div class="right-panel">
+        <div class="search-bar">
+          <input
+            id="search-bar"
+            type="text"
+            name="city"
+            class="search-input"
+            placeholder="Search Location"
+          />
+        </div>
+
+        <div class="grid-container">
+          <!--These will grow once info is placed in them ! don't forget-->
+          <div id="humidity" class="grid-item">
+            <h6>Todays humidity will be...</h6>
+          </div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+
+          <div id="temp-max" class="grid-item">
+            <div class="temp-icon-details">
+
+            </div>
+            <div class="temp-icon-footer | bg-temp">
+               <box-icon color="white" name="sun" animation="tada"></box-icon>
+               <p>6:20am</p> 
+              <box-icon color="white" name="moon" animation="tada"></box-icon>
+              <p>6:20pm</p>
             </div>
         </div>
+          
+      
+
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+        </div>
+      </div>
     </div>
-    <script type= 'module' src="/scripts/Main.js"></script>
-</body>
+    <script type="module" src="/scripts/Main.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <!--Icons -->
+  </body>
 </html>

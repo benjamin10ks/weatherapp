@@ -1,17 +1,23 @@
-:root{
+:root {
   --bg-body-color: #333;
+  --bg-body-accent-color: white;
+
   --main-font-color: white;
-  --bg-accent-color:rgb(38, 143, 228);
+  --main-font-accent-color: black;
+
+  --bg-accent-color: rgb(38, 143, 228);
+
   --bg-card-color: rgba(64, 139, 226, 0.45);
+  --bg-card-accent-color: rgba(51, 51, 51, 0.45);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-  /* 3. Enable keyword animations */
+/* 3. Enable keyword animations */
 @media (prefers-reduced-motion: no-preference) {
   html {
     interpolate-size: allow-keywords;
@@ -19,122 +25,139 @@
 }
 
 body {
-    /* 4. Add accessible line-height */
-    line-height: 1.5;
-    /* 5. Improve text rendering */
-    -webkit-font-smoothing: antialiased;
-    background-color: #63b3ed;
-    color: white;
-    height: 100vh;
-    padding: 4em 0;
-    font-family: "Poppins", sans-serif;
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  background-color: #63b3ed;
+  color: white;
+  min-height: 100vh;
+  padding: 4em 0;
+  font-family: "Poppins", sans-serif;
 }
 
 /* 6. Improve media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
-  
+
 /* 7. Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
-  
+
 /* 8. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
-  
+
 /* 9. Improve line wrapping */
 p {
   text-wrap: pretty;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 
 .app-container {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    max-width: 1200px;
-    height: 90vh;
-    max-height: 800px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 1200px;
+  height: 90vh;
+  max-height: 800px;
+  margin: 0 auto;
 }
 
 .left-panel {
-    background-color: rgba(43, 107, 177, 0.5);
-    border-radius: 25px;
-    padding: 30px;
-    width: 100%;
-    margin-right: 2em;
-    display: flex;
-    flex-direction: column;
-    backdrop-filter: blur(1px);
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
-    border: rgba(255, 255, 255, 0.2) 2px solid;
+  background-color: rgba(43, 107, 177, 0.5);
+  border-radius: 25px;
+  padding: 30px;
+  width: 100%;
+  margin-right: 2em;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(1px);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+  border: rgba(255, 255, 255, 0.2) 2px solid;
 
-    transition: transform 280ms ease-in-out;
+  transition: transform 280ms ease-in-out;
 }
 
-.left-panel:hover{
+.left-panel:hover {
   transform: scale(1.05);
-  
 }
-
 
 .right-panel {
-    background-color: rgba(43, 107, 177, 0.5);
-    border-radius: 25px;
-    padding: 30px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 3em;
-    backdrop-filter: blur(1px);
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
-    border: rgba(255, 255, 255, 0.2) 2px solid;
-    transition: transform 280ms ease-in-out;
+  background-color: rgba(43, 107, 177, 0.5);
+  border-radius: 25px;
+  padding: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3em;
+  backdrop-filter: blur(1px);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+  border: rgba(255, 255, 255, 0.2) 2px solid;
+  transition: transform 280ms ease-in-out;
 }
 
-.right-panel:hover{
+.right-panel:hover {
   transform: scale(1.05);
 }
 
 .location {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .weather-icon {
-    text-align: center;
-    margin: 20px auto;
-    display: block;
-/*You have to change it to display block since left say for example you put it in a box that was made of 80px by 80px and the logo was 70 pixels if you centered it you'd barely tell,
-with display it turns the element into its own block taking the full space but all increasing the width and better centering it making it a true 50% 50% if that makes sense*/    
+  text-align: center;
+  margin: 20px auto;
+  display: block;
+  /*You have to change it to display block since left say for example you put it in a box that was made of 80px by 80px and the logo was 70 pixels if you centered it you'd barely tell,
+with display it turns the element into its own block taking the full space but all increasing the width and better centering it making it a true 50% 50% if that makes sense*/
 }
 
 .temperature {
-    font-size: 5rem;
-    font-weight: bold;
-    text-align: center;
-    margin: 10px 0;
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
 }
 
 .description {
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .feels-like {
-    text-align: center;
-    margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .forecast-container {
@@ -154,29 +177,58 @@ with display it turns the element into its own block taking the full space but a
 }
 
 .forecast {
-    background-color: black;
-    border-radius: 30px;
-    padding: 15px;
-    display: inline-flex;
-    gap: 8px;
+  background-color: black;
+  border-radius: 30px;
+  padding: 15px;
+  display: inline-flex;
+  gap: 8px;
 }
 
 .forecast-day {
-    text-align: center;
-    flex: 0 0 auto;
-    padding: 8px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-align: center;
-    min-width: 80px;
-    transition: background-color 0.2s;
+  text-align: center;
+  flex: 0 0 auto;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  min-width: 80px;
+  transition: background-color 0.2s;
 }
 
 .day-name {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-#humidity{
+#temp-max{
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.temp-icon-footer > p{
+  font-size: .7rem;
+}
+
+.bg-temp{
+  background-color: rgb(17, 17, 17,0.7);
+}
+.temp-icon-footer{
+  display: grid;
+  align-items: center;
+  justify-content: space-evenly;
+  border-top: rgb(131, 131, 131) 2px solid ;
+  
+  grid-template-columns: repeat(2, 30%);
+  max-height: 200px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border-radius: 0 0 20px 20px;
+  padding: .5em 0;
+}
+
+#humidity {
   font-size: 2rem;
   display: flex;
   justify-content: center;
@@ -184,23 +236,23 @@ with display it turns the element into its own block taking the full space but a
 }
 
 .search-bar {
-    background-color: #1e3a8a;
-    border-radius: 30px;
-    padding: 15px 25px;
-    margin-bottom: 30px;
+  background-color: #1e3a8a;
+  border-radius: 30px;
+  padding: 15px 25px;
+  margin-bottom: 30px;
 }
 
 .search-bar:focus-within {
-    border: 1px solid white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: 1px solid white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .search-input {
-    width: 100%;
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 1.2rem;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
 }
 
 .search-input:focus {
@@ -208,15 +260,15 @@ with display it turns the element into its own block taking the full space but a
 }
 
 .search-input:-webkit-autofill,
-.search-input:-webkit-autofill:hover, 
-.search-input:-webkit-autofill:focus, 
-.search-input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 1000px #1e3a8a inset !important;
-    -webkit-text-fill-color: #fff !important;
+.search-input:-webkit-autofill:hover,
+.search-input:-webkit-autofill:focus,
+.search-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #1e3a8a inset !important;
+  -webkit-text-fill-color: #fff !important;
 }
 
 .search-input::placeholder {
-    color: #90cdf4;
+  color: #90cdf4;
 }
 
 .grid-container {
@@ -232,85 +284,84 @@ with display it turns the element into its own block taking the full space but a
   */
 }
 
-.grid-item{
+.grid-item {
   background-color: #1e3a8a;
-  border-radius: 25px; 
+  border-radius: 25px;
   padding: 20px;
   min-height: 100px;
 }
 
 .empty-box {
-    background-color: black;
-    border-radius: 30px;
-    margin-top: 3em;
-    height: 120px;
+  background-color: black;
+  border-radius: 30px;
+  margin-top: 3em;
+  height: 120px;
 }
 
-/*-------------------------Desktop size----------------------------------*/  
-@media (min-width: 800px){
-  
-  .app-container{
-    flex-direction: row
+/*-------------------------Desktop size----------------------------------*/
+@media (min-width: 800px) {
+  .app-container {
+    flex-direction: row;
   }
 
-  .grid-container{
+  .grid-container {
     height: 100%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
   }
 
-.grid-item {
+  .grid-item {
     grid-row: 1;
     grid-column: 1 / 4;
     height: 100%;
     width: 100%;
-}
+  }
 
-.grid-item:nth-of-type(2){
-  grid-column: 4/4;
-  grid-row: 1;
-}
+  .grid-item:nth-of-type(2) {
+    grid-column: 4/4;
+    grid-row: 1;
+  }
 
-.grid-item:nth-of-type(3){
-  grid-row: 2;
-  grid-column: span 2;
-}
+  .grid-item:nth-of-type(3) {
+    grid-row: 2;
+    grid-column: span 2;
+  }
 
-.grid-item:nth-of-type(4){
-  grid-row: 2;
-  grid-column: span 2;
-}
+  .grid-item:nth-of-type(4) {
+    grid-row: 2;
+    grid-column: span 2;
+  }
 
-.grid-item:nth-of-type(5){
-  grid-row: 3;
-  grid-column: 1;
-}
+  .grid-item:nth-of-type(5) {
+    grid-row: 3;
+    grid-column: 1;
+  }
 
-.grid-item:nth-of-type(6){
-  grid-column: 2;
-  grid-row: 3;
-}
+  .grid-item:nth-of-type(6) {
+    grid-column: 2;
+    grid-row: 3;
+  }
 
-.grid-item:nth-of-type(7){
-  grid-column: 3;
-  grid-row: 3;
-}
-.grid-item:nth-of-type(8){
-  grid-column: 4;
-  grid-row: 3;
-}
+  .grid-item:nth-of-type(7) {
+    grid-column: 3;
+    grid-row: 3;
+  }
 
-  .forecast{
+  .grid-item:nth-of-type(8) {
+    grid-column: 4;
+    grid-row: 3;
+  }
+
+  .forecast {
     margin-bottom: 0;
   }
 
-  .left-panel{
+  .left-panel {
     width: 35%;
   }
-  
-  .right-panel{
-    width:  100%;
+
+  .right-panel {
+    width: 100%;
     margin-top: 0em;
   }
-
 }

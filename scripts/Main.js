@@ -11,6 +11,8 @@ const temp = document.getElementById('temperature');
 const feelsLike = document.getElementById('feels-like');
 const humidity = document.getElementById('humidity');
 const weatherIcon = document.getElementById('weather-icon')
+const tempMax = document.getElementById('temp-max');
+
 
 //4day forecast
 const forecast = document.getElementById('forecast');
@@ -30,13 +32,16 @@ const updateWeatherDisplay = (data) => {
     temp.textContent = '';
     feelsLike.textContent = '';
     humidity.textContent = '';
+    tempMax.textContent = '';
 
     cityName.textContent = data.name;
     description.textContent = data.weather[0].description;
     temp.textContent = `${Math.round(data.main.temp)}°F`;
     feelsLike.textContent = `${Math.round(data.main.feels_like)}°F`;
     humidity.textContent = `Humidity will be ${data.main.humidity}%`;
+    tempMax.textContent = data.main.temp_max;
 
+ 
     
 
     console.log(cityName);

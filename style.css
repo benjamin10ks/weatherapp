@@ -74,6 +74,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     backdrop-filter: blur(1px);
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+    border: rgba(255, 255, 255, 0.2) 2px solid;
 }
 
 .right-panel {
@@ -86,6 +87,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 3em;
     backdrop-filter: blur(1px);
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+    border: rgba(255, 255, 255, 0.2) 2px solid;
 }
 
 .location {
@@ -111,8 +113,10 @@ with display it turns the element into its own block taking the full space but a
 
 .description {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
     margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
 .feels-like {
@@ -181,7 +185,8 @@ with display it turns the element into its own block taking the full space but a
     flex-grow: 1;
   display: grid;
   gap: 20px;
-
+  grid-template-columns: repeat(auto-fit, minmax(4fr, 1fr));
+  grid-template-rows: repeat(3fr, 1fr);
   /* Not sure if i need yet
    grid-template-columns: 100%;
   grid-template-rows: 100%; 
@@ -202,21 +207,23 @@ with display it turns the element into its own block taking the full space but a
 }
 
 /*Desktop size*/  
-@media (min-width: 680px){
+@media (min-width: 800px){
   
   .app-container{
     flex-direction: row
   }
 
   .grid-container {
-    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    might not need check first  */
     flex-grow: 1;
 }
 
 .grid-item {
     grid-row: 1;
     grid-column: 1 / 4;
+    
 }
 
 .grid-item:nth-of-type(2){

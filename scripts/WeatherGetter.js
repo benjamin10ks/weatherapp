@@ -1,7 +1,7 @@
 
 import { weatherIconsMap } from '/scripts/WeatherIcons.js';
 
-const API_KEY = 'ed1f93bc05b1f1f3bfaa19950d3ff8a6'; // Replace with API key in .env file
+const API_KEY = 'ed1f93bc05b1f1f3bfaa19950d3ff8a6'; // Replace with API key in .env file'
 
 const searchBar = document.getElementById('search-bar');
 //const searchBtn = document.getElementById('searchBtn');
@@ -11,6 +11,10 @@ const description = document.getElementById('description');
 const temp = document.getElementById('temperature');
 const feelsLike = document.getElementById('feels-like');
 const humidity = document.getElementById('humidity');
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 const weatherIcon = document.getElementById('weather-icon')
 //const locationBtn = document.getElementByClassName('loactionBtn');
@@ -38,7 +42,7 @@ const getCityCoordinates = async (city) => {
 // Get weather data by coordinates to get the weather data
 const getWeatherByCoords = async (lat, lon) => {
     try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial`);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&humidity=${humidity}&appid=${API_KEY}&units=imperial`);
         if (!response.ok) {
             throw new Error('Weather data not found');
         }
@@ -64,9 +68,13 @@ const updateWeatherDisplay = (data) => {
     temp.textContent = '';
     feelsLike.textContent = '';
     humidity.textContent = '';
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     
     cityName.textContent = data.name;
+    humidity.textContent = data.humidity;
     description.textContent = data.weather[0].description;
     temp.textContent = `${Math.round(data.main.temp)}°F`;
     feelsLike.textContent = `${Math.round(data.main.feels_like)}°F`;
@@ -77,6 +85,10 @@ const updateWeatherDisplay = (data) => {
     console.log(temp);
     console.log(feelsLike);
     console.log(humidity);
+<<<<<<< Updated upstream
+=======
+    /*just trying to get humidity to show*/
+>>>>>>> Stashed changes
 };
 
 const updateIcon = (data) => {

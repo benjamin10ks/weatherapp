@@ -25,7 +25,7 @@ body {
     -webkit-font-smoothing: antialiased;
     background-color: #63b3ed;
     color: white;
-    min-height: 100vh;
+    height: 100vh;
     padding: 35px 0;
     font-family: "Poppins", sans-serif;
 }
@@ -73,12 +73,12 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     backdrop-filter: blur(1px);
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
     border: rgba(255, 255, 255, 0.2) 2px solid;
 }
 
 .right-panel {
-  background-color: rgba(43, 107, 177, 0.5);
+    background-color: rgba(43, 107, 177, 0.5);
     border-radius: 25px;
     padding: 30px;
     width: 100%;
@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     margin-top: 3em;
     backdrop-filter: blur(1px);
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
     border: rgba(255, 255, 255, 0.2) 2px solid;
 }
 
@@ -105,7 +105,7 @@ with display it turns the element into its own block taking the full space but a
 }
 
 .temperature {
-    font-size: 6rem;
+    font-size: 5rem;
     font-weight: bold;
     text-align: center;
     margin: 10px 0;
@@ -125,6 +125,7 @@ with display it turns the element into its own block taking the full space but a
 }
 
 .forecast-container {
+  margin-top: 2em;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
@@ -145,9 +146,6 @@ with display it turns the element into its own block taking the full space but a
     padding: 15px;
     display: inline-flex;
     gap: 8px;
-    margin-top: auto;
-    margin-bottom: 3em;
-    //border: solid red 1px;
 }
 
 .forecast-day {
@@ -201,12 +199,12 @@ with display it turns the element into its own block taking the full space but a
 }
 
 .grid-container {
-  flex-grow: 1;
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax ( 1fr));
-  grid-template-rows: repeat(3fr, 1fr);
-  border: red solid 1px;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(7, 1fr);
+  justify-content: center;
+  align-items: center;
   /* Not sure if i need yet
    grid-template-columns: 100%;
   grid-template-rows: 100%; 
@@ -217,33 +215,34 @@ with display it turns the element into its own block taking the full space but a
   background-color: #1e3a8a;
   border-radius: 25px; 
   padding: 20px;
-  min-height: 200px;
+  min-height: 100px;
 }
 
 .empty-box {
     background-color: black;
     border-radius: 30px;
-    margin-top: auto;
+    margin-top: 3em;
     height: 120px;
 }
 
-/*Desktop size*/  
+/*-------------------------Desktop size----------------------------------*/  
 @media (min-width: 800px){
   
   .app-container{
     flex-direction: row
   }
 
-  .grid-container {
-    /* grid-template-columns: repeat(4, 1fr);
+  .grid-container{
+    height: 100%;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    might not need check first  */
-}
+  }
 
 .grid-item {
     grid-row: 1;
     grid-column: 1 / 4;
-    
+    height: 100%;
+    width: 100%;
 }
 
 .grid-item:nth-of-type(2){

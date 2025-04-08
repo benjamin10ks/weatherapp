@@ -12,12 +12,10 @@ const temp = document.getElementById('temperature');
 const feelsLike = document.getElementById('feels-like');
 const humidity = document.getElementById('humidity');
 //const weatherIcon = document.getElementById('weather-icon')
-const weatherIcon = document.getElementById('weather-icon')
 const tempMax = document.getElementById('temp-max');
 const tempMin = document.getElementById('temp-min');
 const sunrise = document.getElementById('sunrise');
-const sunset =document.getElementById('sunset');
-
+const sunset = document.getElementById('sunset');
 
 //5 day forecast
 const forecast = document.getElementById('forecast');
@@ -42,7 +40,7 @@ const daysOfTheWeek = [
 //then you pass in the index you want to reference
 //so data.weather[1].icon this gives you the openweather icon 
 const updateWeatherDisplay = (data) => {
-    cityName.textContent = '';
+    const blank = cityName.textContent = '';
     description.textContent = '';
     temp.textContent = '';
     feelsLike.textContent = '';
@@ -52,6 +50,11 @@ const updateWeatherDisplay = (data) => {
     sunrise.textContent = '';
     sunset.textContent = '';
 
+    const sunriseUINX = new Date(data.sys.sunrise * 1000);
+    const sunriseTime = sunriseUINX.toLocaleTimeString();
+    const sunsetUINX = new Date(data.sys.sunset * 1000);
+    const sunsetTime = sunsetUINX.toLocaleTimeString();
+    
     cityName.textContent = data.name;
     description.textContent = data.weather[0].description;
     temp.textContent = `${Math.round(data.main.temp)}°F`;
@@ -61,7 +64,6 @@ const updateWeatherDisplay = (data) => {
     temp.textContent = data.main.temp_min;
     sunrise.textContent = data.sys.sunrise;
     sunset.textContent = `${data.sys.sunset} PM`;
-    
 
     console.log(cityName);
     console.log(description);

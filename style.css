@@ -178,15 +178,12 @@ with display it turns the element into its own block taking the full space but a
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 20px;
-    flex-grow: 1;
+  flex-grow: 1;
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(4fr, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax ( 1fr));
   grid-template-rows: repeat(3fr, 1fr);
+  border: red solid 1px;
   /* Not sure if i need yet
    grid-template-columns: 100%;
   grid-template-rows: 100%; 
@@ -197,6 +194,7 @@ with display it turns the element into its own block taking the full space but a
   background-color: #1e3a8a;
   border-radius: 25px; 
   padding: 20px;
+  min-height: 200px;
 }
 
 .empty-box {
@@ -217,7 +215,6 @@ with display it turns the element into its own block taking the full space but a
     /* grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
     might not need check first  */
-    flex-grow: 1;
 }
 
 .grid-item {

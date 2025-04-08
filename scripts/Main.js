@@ -80,6 +80,13 @@ const updateForecast = (data) => {
         data.list[24].main.temp, 
         data.list[32].main.temp,
     ];
+    const iconRef = [
+        data.list[0].weather[0].main,
+        data.list[8].weather[0].main,
+        data.list[16].weather[0].main,
+        data.list[24].weather[0].main,
+        data.list[32].weather[0].main
+    ];
 
     const today = new Date();
 
@@ -97,7 +104,8 @@ const updateForecast = (data) => {
             const temp = `${Math.round(forecastArr[index])}°`
             dayElement.querySelector('.day-temp').textContent = `${temp}`;
             
-            //const icon = weatherEmojiMap.get();
+            const icon = weatherEmojiMap.get(iconRef[index]);
+            dayElement.querySelector('.day-icon').textContent = icon;
             
         }
     })

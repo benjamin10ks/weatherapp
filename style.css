@@ -124,18 +124,41 @@ with display it turns the element into its own block taking the full space but a
     margin-bottom: 30px;
 }
 
+.forecast-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 10px;
+  cursor: grab;
+  user-select: none;
+  background-color: black;
+  border-radius: 30px;
+}
+
+.forecast-container::-webkit-scrollbar {
+  display: none;
+}
+
 .forecast {
     background-color: black;
     border-radius: 30px;
     padding: 15px;
-    display: flex;
-    justify-content: space-between;
+    display: inline-flex;
+    gap: 8px;
     margin-top: auto;
     margin-bottom: 3em;
+    //border: solid red 1px;
 }
 
 .forecast-day {
     text-align: center;
+    flex: 0 0 auto;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    min-width: 80px;
+    transition: background-color 0.2s;
 }
 
 .day-name {

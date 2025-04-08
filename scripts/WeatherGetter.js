@@ -4,16 +4,17 @@ import { weatherIconsMap } from '/scripts/WeatherIcons.js';
 const API_KEY = 'ed1f93bc05b1f1f3bfaa19950d3ff8a6'; // Replace with API key in .env file
 
 const searchBar = document.getElementById('search-bar');
-//const searchBtn = document.getElementById('searchBtn');
 
+//large left main display
 const cityName = document.getElementById('city-name');
 const description = document.getElementById('description');
 const temp = document.getElementById('temperature');
 const feelsLike = document.getElementById('feels-like');
 const humidity = document.getElementById('humidity');
-
 const weatherIcon = document.getElementById('weather-icon')
-//const locationBtn = document.getElementByClassName('loactionBtn');
+
+//4day forecast
+const forecast = document.getElementById('forecast');
 
 // Get city coordinates to feed to getWeatherByCoords
 const getCityCoordinates = async (city) => {
@@ -49,6 +50,19 @@ const getWeatherByCoords = async (lat, lon) => {
     }
 };
 
+const getForecast = async (lat, lon) => {
+    try {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial`);
+        if (!response.ok) {
+            throw new Error('Weather data not found');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        throw error;
+    }
+};
+
 // Update weather display
 //to display data:
 //use the data.parentDir.displaydata
@@ -65,12 +79,13 @@ const updateWeatherDisplay = (data) => {
     feelsLike.textContent = '';
     humidity.textContent = '';
 
-    
     cityName.textContent = data.name;
     description.textContent = data.weather[0].description;
     temp.textContent = `${Math.round(data.main.temp)}°F`;
     feelsLike.textContent = `${Math.round(data.main.feels_like)}°F`;
     humidity.textContent = `${data.main.humidity}%`;
+
+    
 
     console.log(cityName);
     console.log(description);
@@ -78,6 +93,12 @@ const updateWeatherDisplay = (data) => {
     console.log(feelsLike);
     console.log(humidity);
 };
+
+const updateForecast = () => {
+    forecast.textContent = '';
+
+    const today = document.createElement('div');
+}
 
 const updateIcon = (data) => {
     const desc = data.weather[0].description
@@ -111,3 +132,31 @@ searchBar.addEventListener('keydown', async (event) => {
         }
     }
 });
+
+const wrapper = document.querySelector('.forecast-container');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+wrapper.addEventListener('mousedown', (e) => {
+  isDown = true;
+  wrapper.classList.add('dragging');
+  startX = e.pageX - wrapper.offsetLeft;
+  scrollLeft = wrapper.scrollLeft;
+});
+
+document.addEventListener('mouseup', () => {
+  if (isDown) {
+    isDown = false;
+    wrapper.classList.remove('dragging');
+  }
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - wrapper.offsetLeft;
+  const walk = (x - startX);
+  wrapper.scrollLeft = scrollLeft - walk;
+});
+

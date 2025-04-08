@@ -83,7 +83,7 @@ const updateWeatherDisplay = (data) => {
     description.textContent = data.weather[0].description;
     temp.textContent = `${Math.round(data.main.temp)}°F`;
     feelsLike.textContent = `${Math.round(data.main.feels_like)}°F`;
-    humidity.textContent = `${data.main.humidity}%`;
+    humidity.textContent = `Humidity will be ${data.main.humidity}%`;
 
     
 

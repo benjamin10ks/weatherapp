@@ -26,7 +26,7 @@ body {
     background-color: #63b3ed;
     color: white;
     height: 100vh;
-    padding: 35px 0;
+    padding: 4em 0;
     font-family: "Poppins", sans-serif;
 }
 
@@ -69,13 +69,21 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 25px;
     padding: 30px;
     width: 100%;
-    margin-right: 1.5em;
+    margin-right: 2em;
     display: flex;
     flex-direction: column;
     backdrop-filter: blur(1px);
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
     border: rgba(255, 255, 255, 0.2) 2px solid;
+
+    transition: transform 280ms ease-in-out;
 }
+
+.left-panel:hover{
+  transform: scale(1.05);
+  
+}
+
 
 .right-panel {
     background-color: rgba(43, 107, 177, 0.5);
@@ -88,6 +96,11 @@ h1, h2, h3, h4, h5, h6 {
     backdrop-filter: blur(1px);
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
     border: rgba(255, 255, 255, 0.2) 2px solid;
+    transition: transform 280ms ease-in-out;
+}
+
+.right-panel:hover{
+  transform: scale(1.05);
 }
 
 .location {
@@ -161,6 +174,13 @@ with display it turns the element into its own block taking the full space but a
 
 .day-name {
     margin-bottom: 10px;
+}
+
+#humidity{
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-bar {

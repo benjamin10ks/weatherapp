@@ -199,21 +199,21 @@ with display it turns the element into its own block taking the full space but a
   margin-bottom: 10px;
 }
 
-#temp-max{
+#sun-times{
   font-size: 2rem;
   display: flex;
   justify-content: center;
   position: relative;
 }
 
-.temp-icon-footer > p{
+.sun-times-footer > p{
   font-size: .7rem;
 }
 
-.bg-temp{
+.bg-sun-times{
   background-color: rgb(17, 17, 17,0.7);
 }
-.temp-icon-footer{
+.sun-times-footer{
   display: grid;
   align-items: center;
   justify-content: space-evenly;

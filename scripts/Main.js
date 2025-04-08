@@ -12,6 +12,9 @@ const feelsLike = document.getElementById('feels-like');
 const humidity = document.getElementById('humidity');
 const weatherIcon = document.getElementById('weather-icon')
 const tempMax = document.getElementById('temp-max');
+const tempMin = document.getElementById('temp-min');
+const sunrise = document.getElementById('sunrise');
+const sunset =document.getElementById('sunset');
 
 
 //4day forecast
@@ -33,15 +36,19 @@ const updateWeatherDisplay = (data) => {
     feelsLike.textContent = '';
     humidity.textContent = '';
     tempMax.textContent = '';
+    tempMin.textContent = '';
+    sunrise.textContent = '';
+    sunset.textContent = '';
 
     cityName.textContent = data.name;
     description.textContent = data.weather[0].description;
     temp.textContent = `${Math.round(data.main.temp)}°F`;
     feelsLike.textContent = `${Math.round(data.main.feels_like)}°F`;
     humidity.textContent = `Humidity will be ${data.main.humidity}%`;
-    tempMax.textContent = data.main.temp_max;
-
- 
+    tempMax.textContent = data.main.temp_max;   
+    temp.textContent = data.main.temp_min;
+    sunrise.textContent = data.sys.sunrise;
+    sunset.textContent = `${data.sys.sunset} PM`;
     
 
     console.log(cityName);
@@ -50,6 +57,8 @@ const updateWeatherDisplay = (data) => {
     console.log(feelsLike);
     console.log(humidity);
 };
+
+
 
 const updateForecast = () => {
     forecast.textContent = '';

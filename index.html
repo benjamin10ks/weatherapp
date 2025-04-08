@@ -86,18 +86,20 @@
           <div id="humidity" class="grid-item">
             <h6>Todays humidity will be...</h6>
           </div>
-          <div class="grid-item"></div>
+          <div id="temps" class="grid-item">
+            <div id="temp-max"></div>
+            <div id="temp-min"></div>
+          </div>
           <div class="grid-item"></div>
 
-          <div id="temp-max" class="grid-item">
-            <div class="temp-icon-details">
-
+          <div id="sun-times" class="grid-item">
+            <div>
             </div>
-            <div class="temp-icon-footer | bg-temp">
+            <div class="sun-times-footer | bg-sun-times">
                <box-icon color="white" name="sun" animation="tada"></box-icon>
-               <p>6:20am</p> 
+               <p id="sunrise">Am</p>
               <box-icon color="white" name="moon" animation="tada"></box-icon>
-              <p>6:20pm</p>
+              <p id="sunset">Pm</p>
             </div>
         </div>
           

@@ -405,10 +405,7 @@ with display it turns the element into its own block taking the full space but a
 
 
 /*night modes*/
-<<<<<<< HEAD
-=======
 
 .night--mode{
   background: linear-gradient(180deg,rgba(16, 29, 74, 1) 0%, rgba(70, 66, 96, 1) 100%);
 }
->>>>>>> 2e9513095f7cb03ce341bea8f7c9b3339724b4fd

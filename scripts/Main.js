@@ -11,7 +11,7 @@ const description = document.getElementById('description');
 const temp = document.getElementById('temperature');
 const feelsLike = document.getElementById('feels-like');
 const humidity = document.getElementById('humidity');
-//const weatherIcon = document.getElementById('weather-icon')
+const weatherIcon = document.getElementById('weather-icon')
 const tempMax = document.getElementById('temp-max');
 const tempMin = document.getElementById('temp-min');
 const sunrise = document.getElementById('sunrise');
@@ -111,10 +111,10 @@ const updateForecast = (data) => {
     })
 }
 
+//logic works just need images for the icons
 const updateIcon = (data) => {
-    //const desc = data.weather[0].description
-    //box ICON STUFF
-    // weatherIcon.setAttribute('name', weatherIconsMap.get(desc));
+    const desc = data.weather[0].description
+    weatherIcon.setAttribute('src', weatherIconsMap.get(desc));
 }
 //this can be sent anywhere to the user just change the elem its targeting
 const handleError = (error) => {
@@ -141,7 +141,7 @@ searchBar.addEventListener('keydown', async (event) => {
             updateWeatherDisplay(weatherData);
             updateForecast(forecast);
             console.log(forecast);
-            ///updateIcon(weatherData);
+            //updateIcon(weatherData);
         } catch (error) {
             handleError(error);
         }

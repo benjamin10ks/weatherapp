@@ -9,6 +9,14 @@ const modesToggle = document.getQuerySelectorAll('.modes-toggle');
 const backGround = document.getQuerySelectorAll('.body')
 
 
+//Modes toggle
+
+modesToggle.addEventListener('click', () =>
+    {
+   backGround.classList.toggle('night--mode');
+
+});
+
 //large left main display
 const cityName = document.getElementById('city-name');
 const description = document.getElementById('description');
@@ -22,12 +30,6 @@ const sunrise = document.getElementById('sunrise');
 const sunset = document.getElementById('sunset');
 
 
-//Modes toggle
-
-modesToggle.addEventListener('click', (e) => {
-    backGround.classList.toggle('night--mode');
-
-});
 
 //5 day forecast
 const forecast = document.getElementById('forecast');

@@ -25,16 +25,21 @@
   }
 }
 
-body {
+.body {
   /* 4. Add accessible line-height */
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
-  background-color: #63b3ed;
+  background: #63b3ed;
   color: white;
-  min-height: 100vh;
+  min-height: 100svh;
   padding: 4em 0;
   font-family: "Poppins", sans-serif;
+}
+
+.night--mode{
+  background: white;
+  color: white;
 }
 
 /* 6. Improve media defaults */
@@ -396,8 +401,3 @@ with display it turns the element into its own block taking the full space but a
 
 
 /*night modes*/
-
-.night--mode{
-  background-color: white;
-  color: white;
-}

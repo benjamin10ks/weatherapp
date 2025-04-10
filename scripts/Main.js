@@ -55,7 +55,7 @@ const updateWeatherDisplay = (data) => {
     const sunsetUINX = new Date(data.sys.sunset * 1000);
     const sunsetTime = sunsetUINX.toLocaleTimeString();
     
-    cityName.textContent = data.name;
+    cityName.textContent = `${data.name} 📍`;
     description.textContent = data.weather[0].description;
     temp.textContent = `${Math.round(data.main.temp)}°F`;
     feelsLike.textContent = `Feels like ${Math.round(data.main.feels_like)}°F`;

@@ -1,5 +1,5 @@
 
-const API_KEY = 'ed1f93bc05b1f1f3bfaa19950d3ff8a6'; // Replace with API key in .env file
+const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY; 
 
 // Get city coordinates to feed to getWeatherByCoords
 //might depricate for getForcast()

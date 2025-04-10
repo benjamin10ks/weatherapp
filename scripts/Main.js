@@ -40,7 +40,6 @@ const daysOfTheWeek = [
 //then you pass in the index you want to reference
 //so data.weather[1].icon this gives you the openweather icon 
 const updateWeatherDisplay = (data) => {
-    const blank = cityName.textContent = '';
     description.textContent = '';
     temp.textContent = '';
     feelsLike.textContent = '';

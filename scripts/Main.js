@@ -5,18 +5,6 @@ import { getCityCoordinates, getForecast, getWeatherByCoords } from '/scripts/Da
 
 const searchBar = document.getElementById('search-bar');
 
-const modesToggle = document.getElementById('modes-toggle');
-const backGround = document.querySelectorAll('.body')
-
-
-//Modes toggle
-
-modesToggle.addEventListener('click', () =>
-    {
-   backGround.classList.toggle('night--mode');
-
-});
-
 //large left main display
 const cityName = document.getElementById('city-name');
 const description = document.getElementById('description');
@@ -30,6 +18,8 @@ const sunrise = document.getElementById('sunrise');
 const sunset = document.getElementById('sunset');
 
 //Modes toggle
+const modesToggle = document.getElementById('modes-toggle');
+const backGround = document.querySelector('.body')
 
 modesToggle.addEventListener('click', () => {
     backGround.classList.toggle('night--mode');

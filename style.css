@@ -30,7 +30,7 @@ body {
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
-  background-color: #63b3ed;
+  background: linear-gradient(180deg,rgba(102, 173, 254, 1) 0%, rgba(218, 235, 255, 1) 100%);
   color: white;
   min-height: 100vh;
   padding: 4em 0;
@@ -398,6 +398,5 @@ with display it turns the element into its own block taking the full space but a
 /*night modes*/
 
 .night--mode{
-  background-color: white;
-  color: white;
+  background: linear-gradient(180deg,rgba(16, 29, 74, 1) 0%, rgba(70, 66, 96, 1) 100%);
 }

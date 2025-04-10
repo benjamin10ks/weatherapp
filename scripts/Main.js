@@ -98,9 +98,9 @@ const updateForecast = (data) => {
 
     const today = new Date();
 
-    const forcastDays = document.querySelectorAll('.forecast-day');
+    const forecastDays = document.querySelectorAll('.forecast-day');
 
-    forcastDays.forEach((dayElement, index) => {
+    forecastDays.forEach((dayElement, index) => {
         if(index < forecastArr.length){
             
             const day = new Date(today);

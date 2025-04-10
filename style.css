@@ -30,6 +30,8 @@ body {
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
   background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(102,173,254,1) 0%, rgba(218,235,255,1) 100%);
+  //night mode gradient
+  //background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(16,29,74,1) 0%, rgba(70,66,96,1) 100%);
   color: white;
   min-height: 100vh;
   padding: 4em 0;

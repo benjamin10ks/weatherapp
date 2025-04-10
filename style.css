@@ -30,7 +30,7 @@ body {
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
-  background-color: var(--bg-body-day-color);
+  background-color: #63b3ed;
   color: white;
   min-height: 100vh;
   padding: 4em 0;
@@ -198,6 +198,10 @@ with display it turns the element into its own block taking the full space but a
 
 .day-name {
   margin-bottom: 10px;
+}
+
+.day-icon { 
+  font-size: 2.5rem;
 }
 
 #sun-times{

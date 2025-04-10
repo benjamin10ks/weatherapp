@@ -397,7 +397,7 @@ with display it turns the element into its own block taking the full space but a
 
 /*night modes*/
 
-.night-modes{
-  background: var(--bg-body-night-accent-color);
+.night--mode{
+  background-color: white;
   color: white;
 }

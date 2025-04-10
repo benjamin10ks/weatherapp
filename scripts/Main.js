@@ -4,9 +4,9 @@ import { getCityCoordinates, getForecast, getWeatherByCoords } from '/scripts/Da
 
 
 const searchBar = document.getElementById('search-bar');
-const modesToggle = document.getQuerySelectorAll('.modes-toggle');
 
-const backGround = document.getQuerySelectorAll('.body')
+const modesToggle = document.getElementById('modes-toggle');
+const backGround = document.querySelectorAll('.body')
 
 
 //large left main display
@@ -21,12 +21,10 @@ const tempMin = document.getElementById('temp-min');
 const sunrise = document.getElementById('sunrise');
 const sunset = document.getElementById('sunset');
 
-
 //Modes toggle
 
-modesToggle.addEventListener('click', (e) => {
+modesToggle.addEventListener('click', () => {
     backGround.classList.toggle('night--mode');
-
 });
 
 //5 day forecast

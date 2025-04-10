@@ -9,6 +9,14 @@ const modesToggle = document.getElementById('modes-toggle');
 const backGround = document.querySelectorAll('.body')
 
 
+//Modes toggle
+
+modesToggle.addEventListener('click', () =>
+    {
+   backGround.classList.toggle('night--mode');
+
+});
+
 //large left main display
 const cityName = document.getElementById('city-name');
 const description = document.getElementById('description');

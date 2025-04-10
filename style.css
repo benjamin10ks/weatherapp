@@ -199,6 +199,10 @@ with display it turns the element into its own block taking the full space but a
   margin-bottom: 10px;
 }
 
+.day-icon { 
+  font-size: 2.5rem;
+}
+
 #sun-times{
   font-size: 2rem;
   display: flex;

@@ -1,6 +1,6 @@
 :root {
-  --bg-body-color: #333;
-  --bg-body-accent-color: white;
+  --bg-body-day-color: linear-gradient(0deg, #daebff 10%,#66ADFE 80% );
+  --bg-body-night-accent-color: linear-gradient(#101D4A, #464260);
 
   --main-font-color: white;
   --main-font-accent-color: black;
@@ -17,6 +17,7 @@
   box-sizing: border-box;
 }
 
+
 /* 3. Enable keyword animations */
 @media (prefers-reduced-motion: no-preference) {
   html {
@@ -29,7 +30,7 @@ body {
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
-  background-color: #63b3ed;
+  background-color: var(--bg-body-day-color);
   color: white;
   min-height: 100vh;
   padding: 4em 0;
@@ -364,4 +365,35 @@ with display it turns the element into its own block taking the full space but a
     width: 100%;
     margin-top: 0em;
   }
+}
+
+/*testing toggle button*/
+
+.modes-toggle{
+  position: fixed;
+  background-color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  right: 10%;
+  padding: 5px 0 0  0;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.modes-toggle:hover{
+  opacity: 75%;
+}
+
+.modes-toggle-btn{
+  padding: 0;
+}
+
+
+/*night modes*/
+
+.night-modes{
+  background: var(--bg-body-night-accent-color);
+  color: white;
 }

@@ -4,7 +4,7 @@ import { getCityCoordinates, getForecast, getWeatherByCoords } from '/scripts/Da
 
 
 const searchBar = document.getElementById('search-bar');
-
+const modesToggle = document.getQuerySelector('.modes-toggle');
 //large left main display
 const cityName = document.getElementById('city-name');
 const description = document.getElementById('description');
@@ -16,6 +16,14 @@ const tempMax = document.getElementById('temp-max');
 const tempMin = document.getElementById('temp-min');
 const sunrise = document.getElementById('sunrise');
 const sunset = document.getElementById('sunset');
+
+
+//Modes toggle
+
+modesToggle.addEventListener('click', (e) => {
+    modesToggle.classList.toggle('night-mode');
+
+});
 
 //5 day forecast
 const forecast = document.getElementById('forecast');

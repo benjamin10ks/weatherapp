@@ -23,7 +23,7 @@ const backGround = document.querySelector('.body')
 
 modesToggle.addEventListener('click', () => {
     backGround.classList.toggle('night--mode');
-});
+}); 
 
 //5 day forecast
 const forecast = document.getElementById('forecast');
@@ -57,10 +57,15 @@ const updateWeatherDisplay = (data) => {
     sunrise.textContent = '';
     sunset.textContent = '';
 
-    const sunriseUINX = new Date(data.sys.sunrise * 1000);
-    const sunriseTime = sunriseUINX.toLocaleTimeString();
-    const sunsetUINX = new Date(data.sys.sunset * 1000);
-    const sunsetTime = sunsetUINX.toLocaleTimeString();
+    // const sunriseUINX = new Date(data.sys.sunrise * 1000);
+    // const sunriseTime = sunriseUINX.toLocaleTimeString();
+    // const sunsetUINX = new Date(data.sys.sunset * 1000);
+    // // const sunsetTime = sunsetUINX.toLocaleTimeString();
+
+    const sunriseTime = data.sys.sunrise * 1000;
+    const sunriseUNIX = new Date(sunriseTime);
+    const newTime =  sunriseUNIX.toLocaleTimeString();
+
     
     cityName.textContent = `${data.name} 📍`;
     description.textContent = data.weather[0].description;
@@ -72,11 +77,7 @@ const updateWeatherDisplay = (data) => {
     sunrise.textContent = data.sys.sunrise;
     sunset.textContent = `${data.sys.sunset} PM`;
 
-    console.log(cityName);
-    console.log(description);
-    console.log(temp);
-    console.log(feelsLike);
-    console.log(humidity);
+    
 };
 
 const updateForecast = (data) => {

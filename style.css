@@ -37,7 +37,7 @@
   padding: 4em 0;
   font-family: "Poppins", sans-serif;
 
-  transition: background 24s ease-in;
+  transition: background-color 24s ease-in;
 }
 
 
@@ -179,8 +179,10 @@ with display it turns the element into its own block taking the full space but a
   padding: 10px;
   cursor: grab;
   user-select: none;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.457);
   border-radius: 30px;
+  backdrop-filter: blur(10px);
+  
 }
 
 .forecast-container::-webkit-scrollbar {
@@ -188,7 +190,6 @@ with display it turns the element into its own block taking the full space but a
 }
 
 .forecast {
-  background-color: black;
   border-radius: 30px;
   padding: 15px;
   display: inline-flex;
@@ -316,10 +317,11 @@ with display it turns the element into its own block taking the full space but a
 }
 
 .grid-item {
-  background-color: #1e3a8a;
+  background-color: #0614399c;
   border-radius: 25px;
   padding: 20px;
   min-height: 100px;
+  backdrop-filter: blur(10px);
 }
 
 .empty-box {
@@ -395,6 +397,10 @@ with display it turns the element into its own block taking the full space but a
     width: 100%;
     margin-top: 0em;
   }
+
+  .sun-times-footer > p{
+    font-size: 1.1rem;
+  }
 }
 
 /*testing toggle button*/
@@ -405,7 +411,8 @@ with display it turns the element into its own block taking the full space but a
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  right: 10%;
+  right: 5%;
+  top: 3%;
   padding: 5px 0 0  0;
   border: none;
   cursor: pointer;

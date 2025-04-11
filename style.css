@@ -31,10 +31,13 @@
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
   background: linear-gradient(180deg,rgba(102, 173, 254, 1) 0%, rgba(218, 235, 255, 1) 100%);
+  background-repeat: no-repeat;
   color: white;
   min-height: 100svh;
   padding: 4em 0;
   font-family: "Poppins", sans-serif;
+
+  transition: background-color 2s ease-in;
 }
 
 .night--mode{

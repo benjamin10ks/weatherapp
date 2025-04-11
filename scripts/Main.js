@@ -23,7 +23,6 @@ const backGround = document.querySelector('.body')
 
 modesToggle.addEventListener('click', () => {
     backGround.classList.toggle('night--mode');
-    console.log('hello');
 });
 
 //5 day forecast

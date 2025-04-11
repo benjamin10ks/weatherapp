@@ -62,9 +62,14 @@ const updateWeatherDisplay = (data) => {
     // const sunsetUINX = new Date(data.sys.sunset * 1000);
     // // const sunsetTime = sunsetUINX.toLocaleTimeString();
 
-    const sunriseTime = data.sys.sunrise * 1000;
-    const sunriseUNIX = new Date(sunriseTime);
-    const newTime =  sunriseUNIX.toLocaleTimeString();
+    // const sunriseTime = data.sys.sunrise * 1000;
+    const sunriseUNIX = new Date(data.sys.sunrise * 1000);
+    const newSunriseTime =  sunriseUNIX.toLocaleTimeString();
+
+    const sunsetUNIX = new Date(data.sys.sunset * 1000);
+    const newSunsetTime = sunsetUNIX.toLocaleTimeString();
+
+
 
     
     cityName.textContent = `${data.name} 📍`;
@@ -72,10 +77,10 @@ const updateWeatherDisplay = (data) => {
     temp.textContent = `${Math.round(data.main.temp)}°F`;
     feelsLike.textContent = `Feels like ${Math.round(data.main.feels_like)}°F`;
     humidity.textContent = `Humidity will be ${data.main.humidity}%`;
-    tempMax.textContent = data.main.temp_max;   
-    tempMin.textContent = data.main.temp_min;
-    sunrise.textContent = data.sys.sunrise;
-    sunset.textContent = `${data.sys.sunset} PM`;
+    tempMax.textContent = `${Math.round(data.main.temp_max)}°F`;   
+    tempMin.textContent = `${Math.round(data.main.temp_min)}°F`;
+    sunrise.textContent = newSunriseTime;
+    sunset.textContent = newSunsetTime;
 
     
 };

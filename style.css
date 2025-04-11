@@ -287,6 +287,21 @@ with display it turns the element into its own block taking the full space but a
   color: #90cdf4;
 }
 
+
+/*-----------------Temps min/max -----------*/
+
+#temps{ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;     
+}
+
+#temp-max,
+#temp-min{
+  padding: .6em 0;
+}
+
 .grid-container {
   display: grid;
   gap: 20px;

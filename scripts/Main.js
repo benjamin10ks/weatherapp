@@ -16,6 +16,8 @@ const tempMax = document.getElementById('temp-max');
 const tempMin = document.getElementById('temp-min');
 const sunrise = document.getElementById('sunrise');
 const sunset = document.getElementById('sunset');
+const rain = document.getElementById('rain');
+
 
 //Modes toggle
 const modesToggle = document.getElementById('modes-toggle');
@@ -56,11 +58,8 @@ const updateWeatherDisplay = (data) => {
     tempMin.textContent = '';
     sunrise.textContent = '';
     sunset.textContent = '';
+    rain.textContent = '';
 
-    // const sunriseUINX = new Date(data.sys.sunrise * 1000);
-    // const sunriseTime = sunriseUINX.toLocaleTimeString();
-    // const sunsetUINX = new Date(data.sys.sunset * 1000);
-    // // const sunsetTime = sunsetUINX.toLocaleTimeString();
 
     // const sunriseTime = data.sys.sunrise * 1000;
     const sunriseUNIX = new Date(data.sys.sunrise * 1000);
@@ -81,6 +80,9 @@ const updateWeatherDisplay = (data) => {
     tempMin.textContent = `${Math.round(data.main.temp_min)}°F`;
     sunrise.textContent = newSunriseTime;
     sunset.textContent = newSunsetTime;
+    rain.textContent =  data.main.rain;
+
+    console.log(rain);
 
     
 };
